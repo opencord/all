@@ -1,0 +1,27 @@
+#!/bin/sh
+
+## Overwrites .gitreview with the specified parameters.
+
+
+## read input, display help if necessary
+if [[ "$@" == *--help* ]]; then
+    cat<<EOF
+ Overwrites the .gitreview with the specified parameters
+ Usage:
+    update-gitreview <repo-name> <branch> <gitreview-location>
+EOF
+    exit 0;
+fi
+
+name=$1
+branch=$2
+path=$3
+
+cat << EOF > .gitreview
+[gerrit]
+host=gerrit.opencord.org
+port=29418
+project=$name.git
+defaultremote=origin
+defaultbranch=$branch
+EOF
