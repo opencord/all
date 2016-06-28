@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function usage() {
+
+cat << EOF
+Updates all submodules of the current project as well as the current project.
+
+Usage:
+git cpull [-r] [remote] [branch]
+
+Flags:
+- -r : Recurses through all submodules
+EOF
+exit 0;
+}
+
+RECURSE=false
+if [[ "$@" == *--help* ]]; then
+  usage
+fi
+
+if [ "$1" == "-r" ]; then
+    RECURSE=true
+    shift
+fi
+
+echo "Pulling current repo"
+git pull $@ 
+
+if ($RECURSE); then
+    echo "Recursing through submodules"
+    git submodule update --remote --rebase --recursive --init
+else
+    echo "Updating submodules"
+    git submodule update --remote --rebase --init
+fi

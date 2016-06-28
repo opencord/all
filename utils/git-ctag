@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function usage() {
+
+cat << EOF
+Tags, optionally recursively, current repository and its submodules
+
+Usage:
+git ctag [-r] [git-tag-options]
+
+Flags:
+- -r : Recurses through all submodules
+EOF
+exit 0;
+}
+
+RECURSE=false
+if [[ "$@" == *--help* ]]; then
+  usage
+fi
+
+if [ "$1" == "-r" ]; then
+    RECURSE=true
+    shift
+fi
+
+echo "Tagging current repo"
+git tag $@
+
+if ($RECURSE); then
+    echo "Recursively tagging submodules"
+    git submodule foreach --recursive git tag $@
+else
+    echo "Tagging submodules"
+    git submodule foreach git tag $@
+fi

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function usage() {
+
+cat << EOF
+Submits all outstanding commits to gerrit. Can be done recursively as well.
+
+Usage:
+git creview [-r] [git-review-options]
+
+Flags:
+- -r : Recurses through all submodules
+EOF
+exit 0;
+}
+
+RECURSE=false
+if [[ "$@" == *--help* ]]; then
+  usage
+fi
+
+if [ "$1" == "-r" ]; then
+    RECURSE=true
+    shift
+fi
+
+echo "Reviewing current repo"
+git review $@ 
+
+if ($RECURSE); then
+    echo "Recursively reviewing submodules"
+    git submodule foreach --recursive git review
+else
+    echo "Reviewing Submodules"
+    git submodule foreach git review
+fi

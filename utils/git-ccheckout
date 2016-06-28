@@ -1,0 +1,53 @@
+#!/bin/bash
+
+function usage() {
+
+cat << EOF
+Checks out branch <branch> for this module as well as it's submodules
+
+Usage:
+git ccheckout [-r] [-b] <branch>
+
+Flags:
+- -r : Recurses through all submodules
+- -b : Checks out a new branch with the current commit as it's start point.
+EOF
+exit 0;
+}
+
+RECURSE=false
+if [[ "$@" == *--help* ]]; then
+  usage
+fi
+
+RECURSE=""
+if [ "$1" == "-r" ]; then
+    RECURSE="--recursive"
+    shift
+fi
+
+if [ "$1" == "-b" ]; then
+    NEW=true
+    shift
+fi
+
+if [ -z $1 ]; then
+    echo "Branch name is missing"
+    usage
+fi
+
+BRANCH=$1
+
+echo "Checking out root repository branch"
+if ($NEW); then
+    git checkout -b $BRANCH
+else
+    git checkout $BRANCH
+fi
+
+echo "Checking out branch $BRANCH in submodules"
+if ($NEW); then
+    git submodule foreach $RECURSE git checkout -b $BRANCH
+else
+    git submodule foreach $RECURSE git checkout $BRANCH
+fi

@@ -1,33 +1,9 @@
-[submodule "aaa"]
-	path = aaa
-	url = ssh://ash@gerrit.opencord.org:29418/aaa.git
-[submodule "config"]
-	path = config
-	url = ssh://ash@gerrit.opencord.org:29418/config.git
 [submodule "cord"]
 	path = cord
 	url = ssh://ash@gerrit.opencord.org:29418/cord.git
-[submodule "cord-onos-publisher"]
-	path = cord-onos-publisher
-	url = ssh://ash@gerrit.opencord.org:29418/cord-onos-publisher.git
-[submodule "igmp"]
-	path = igmp
-	url = ssh://ash@gerrit.opencord.org:29418/igmp.git
-[submodule "maas"]
-	path = maas
-	url = ssh://ash@gerrit.opencord.org:29418/maas.git
-[submodule "mcast"]
-	path = mcast
-	url = ssh://ash@gerrit.opencord.org:29418/mcast.git
-[submodule "olt"]
-	path = olt
-	url = ssh://ash@gerrit.opencord.org:29418/olt.git
 [submodule "olt-agent"]
 	path = olt-agent
 	url = ssh://ash@gerrit.opencord.org:29418/olt-agent.git
-[submodule "vtn"]
-	path = vtn
-	url = ssh://ash@gerrit.opencord.org:29418/vtn.git
 [submodule "exampleservice"]
 	path = exampleservice
 	url = ssh://ash@gerrit.opencord.org:29418/exampleservice.git
