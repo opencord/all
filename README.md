@@ -1,5 +1,8 @@
 # Release Process
 
+This repo is intented to be used to facilitate the release process. All CORD modules that are intended to be 
+released wit hany given cord release should be integrated into this repository. 
+
 ## Source the environment to get git commands
 
     source bash_profile
@@ -39,9 +42,9 @@
 
 ## Update CORD ONOS Applications to SNAPSHOTS
 
-    cd cord-onos-publisher
+    cd cord/components/cord-onos-publisher
     update-versions $SNAPSHOT_VERSION $ONOS_VERSION
-    cd ..
+    cd -
 
 ## Push everything up for Review
 
