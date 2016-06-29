@@ -29,8 +29,8 @@ git review $@
 
 if ($RECURSE); then
     echo "Recursively reviewing submodules"
-    git submodule foreach --recursive git review
+    git submodule foreach --recursive git review $@
 else
     echo "Reviewing Submodules"
-    git submodule foreach git review
+    git submodule foreach git review $@
 fi
