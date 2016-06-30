@@ -26,10 +26,10 @@ fi
 
 if ($RECURSE); then
     echo "Commiting recusively through submodules"
-    git submodule foreach --recursive git commit $@
+    git submodule foreach --recursive git commit "$@"
 else
     echo "Commiting submodules"
-    git submodule foreach git commit -a $@
+    git submodule foreach git commit "$@"
 fi
 
 MODLIST=$(git submodule --quiet foreach 'echo $name')
@@ -42,5 +42,5 @@ for module in $MODLIST; do
 done
 
 echo "Commiting current module"
-git commit $@
+git commit "$@"
 
