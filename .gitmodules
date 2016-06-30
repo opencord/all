@@ -1,33 +1,33 @@
 [submodule "cord"]
 	path = cord
-	url = ssh://ash@gerrit.opencord.org:29418/cord.git
+	url = ../cord
 [submodule "olt-agent"]
 	path = olt-agent
-	url = ssh://ash@gerrit.opencord.org:29418/olt-agent.git
+	url = ../olt-agent
 [submodule "exampleservice"]
 	path = exampleservice
-	url = ssh://ash@gerrit.opencord.org:29418/exampleservice.git
+	url = ../exampleservice
 [submodule "fabric"]
 	path = fabric
-	url = ssh://ash@gerrit.opencord.org:29418/fabric.git
+	url = ../fabric
 [submodule "onos-service"]
 	path = onos-service
-	url = ssh://ash@gerrit.opencord.org:29418/onos-service.git
+	url = ../onos-service
 [submodule "vrouter"]
 	path = vrouter
-	url = ssh://ash@gerrit.opencord.org:29418/vrouter.git
+	url = ../vrouter
 [submodule "vsg"]
 	path = vsg
-	url = ssh://ash@gerrit.opencord.org:29418/vsg.git
+	url = ../vsg
 [submodule "vtr"]
 	path = vtr
-	url = ssh://ash@gerrit.opencord.org:29418/vtr.git
+	url = ../vtr
 [submodule "xos"]
 	path = xos
-	url = ssh://ash@gerrit.opencord.org:29418/xos.git
+	url = ../xos
 [submodule "xos-external-app-examples"]
 	path = xos-external-app-examples
-	url = ssh://ash@gerrit.opencord.org:29418/xos-external-app-examples.git
+	url = ../xos-external-app-examples
 [submodule "cord-tester"]
 	path = cord-tester
-	url = ssh://ash@gerrit.opencord.org:29418/cord-tester.git
+	url = ../cord-tester
