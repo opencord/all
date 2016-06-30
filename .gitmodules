@@ -28,6 +28,3 @@
 [submodule "xos-external-app-examples"]
 	path = xos-external-app-examples
 	url = ../xos-external-app-examples
-[submodule "cord-tester"]
-	path = cord-tester
-	url = ../cord-tester
