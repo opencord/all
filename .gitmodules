@@ -28,3 +28,9 @@
 [submodule "xos-external-app-examples"]
 	path = xos-external-app-examples
 	url = ../xos-external-app-examples
+[submodule "fabric-oftest"]
+	path = fabric-oftest
+	url = ../fabric-oftest
+[submodule "service-profile"]
+	path = service-profile
+	url = ../service-profile

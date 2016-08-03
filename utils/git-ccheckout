@@ -15,6 +15,7 @@ EOF
 exit 0;
 }
 
+NEW=false
 RECURSE=false
 if [[ "$@" == *--help* ]]; then
   usage
